@@ -17,6 +17,11 @@
                     sh './jenkins/scripts/test.sh'
                }
             }
+            stage('Manual Approval') {
+                steps {
+                    input(message: 'Lanjutkan ke tahap Deploy?', ok: 'Proceed', submitter: 'user')
+                }
+            }
             stage('Deploy') {
                 steps {
                     sh './jenkins/scripts/deliver.sh'
