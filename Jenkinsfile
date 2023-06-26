@@ -20,7 +20,7 @@
             stage('Deploy') {
                 steps {
                     sh './jenkins/scripts/deliver.sh'
-                    sleep 1m
+                    sleep time: 60, unit: 'SECONDS'
             }
         }
         }
